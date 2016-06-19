@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+   <type>org.netbeans.modules.web.project</type>
+   <configuration>
+      <_0:data xmlns:_0="http://www.netbeans.org/ns/web-project/3">
+         <_0:name>ecms</_0:name>
+         <_0:minimum-ant-version>1.6.5</_0:minimum-ant-version>
+         <_0:web-module-libraries/>
+         <_0:web-module-additional-libraries/>
+         <_0:source-roots>
+            <_0:root id="src.dir" name="Source Packages"/>
+         </_0:source-roots>
+         <_0:test-roots>
+            <_0:root id="test.src.dir" name="Test Packages"/>
+         </_0:test-roots>
+      </_0:data>
+   </configuration>
+</project>

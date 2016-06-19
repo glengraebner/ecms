@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 13, 2016, 8:43:09 PM
+    Author     : Glen Graebner
+*/
+
+body
+{
+    margin: 0px;
+    overflow: hidden;
+}
+
+#div_container, #div_header, #div_menu, #div_main, #div_tray
+{
+    width: 100%;
+    float: left;
+}
+
+#div_header
+{
+    background-color: blue;
+    height: 45px;
+}
+
+#titleblock
+{
+    float: left;
+    margin-left: 16px;
+    margin-top: 8px;
+    font-family: helvetica;
+    font-size: 20pt;
+    color: white;
+    text-shadow: 2px 2px #555555;
+}
+
+#div_menu
+{
+    background-color: #cccccc;
+    height: 30px;
+}
+
+#div_tray
+{
+    background-color: #bbbbbb;
+    height: 26px;
+}
+
+.menuitem
+{
+    float: left;
+    margin-left: 34px;
+    margin-top: 8px;
+    font-family: Helvetica;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+#div_panel2_nav
+{
+    float: left;
+    background-color: lightblue;
+    padding-left: 8px;
+    padding-top: 5px;
+}
+
+#div_panel2_content
+{
+    float: left;
+    background-color: pink;
+}
