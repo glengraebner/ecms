@@ -36,7 +36,8 @@ public class LibraryServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
+        try 
+        {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -47,7 +48,8 @@ public class LibraryServlet extends HttpServlet {
             out.println("<h1>Servlet LibraryServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        } finally {
+        } 
+        finally {
             out.close();
         }
     }
@@ -109,7 +111,8 @@ public class LibraryServlet extends HttpServlet {
                     {}
                     finally 
                     {
-                        try {
+                        try 
+                        {
                             if (stmt != null)
                             stmt.close();
                         }  
