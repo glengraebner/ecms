@@ -5,12 +5,17 @@
  */
 package ajax.ecms.com;
 
+//import com.mysql.jdbc.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
+import javax.sql.*;
+import javax.naming.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  *
@@ -65,10 +70,65 @@ public class LibraryServlet extends HttpServlet {
         StringBuffer sb = new StringBuffer();
         
         if (action.equals("getlist")) {
-            response.setContentType("text/xml");
-            response.setHeader("Cache-Control", "no-cache");
-            sb.append("<modules><module>Procedural</module></modules>");
-            response.getWriter().write(sb.toString());
+            
+            DataSource ds = null;
+            Connection conn = null;
+            ResultSet result = null;
+            Statement stmt = null;
+            
+            try
+            {
+                Context context = new InitialContext();
+                Context envCtx = (Context) context.lookup("java:comp/env");
+                ds =  (DataSource)envCtx.lookup("jdbc/ecms");
+                if (ds != null)
+                {
+                    try
+                    {
+                        conn = ds.getConnection();
+                        stmt = conn.createStatement();
+                        result = stmt.executeQuery("SELECT * FROM modules");
+
+                        response.setContentType("text/xml");
+                        response.setHeader("Cache-Control", "no-cache");
+                        sb.append("<modules>");
+                        
+                        while (result.next()) 
+                        {
+                            sb.append("<module>" + result.getString("title") + "</module>");
+                        }
+                        
+                        sb.append("</modules>");
+                        response.getWriter().write(sb.toString());
+                        
+                        result.close();
+                        stmt.close();
+                        conn.close();
+                    }
+                    catch(SQLException e)
+                    {}
+                    finally 
+                    {
+                        try {
+                            if (stmt != null)
+                            stmt.close();
+                        }  
+                        catch (SQLException e)
+                        {}
+                        try 
+                        {
+                            if (conn != null)
+                            conn.close();
+                        } 
+                        catch (SQLException e) 
+                        {}
+                    }
+                }
+            }
+            catch (NamingException e) 
+            {
+                System.out.println("Error occurred " + e);
+            }
         }
     }
 
