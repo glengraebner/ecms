@@ -24,6 +24,7 @@
                 <div class="menuitem" id="div_menuitem1" onclick="selectMenuItem(1);">Dashboard</div>
                 <div class="menuitem" id="div_menuitem2" onclick="selectMenuItem(2);">Library</div>
                 <div class="menuitem" id="div_menuitem3" onclick="selectMenuItem(3);">Publications</div>
+                <div class="menuitem" id="div_menuitem4" onclick="selectMenuItem(4);">Administration</div>
             </div>
             <div id="div_main">
                 <div id="div_panel1">
@@ -34,6 +35,9 @@
                     <div id="div_panel2_content"></div>
                 </div>
                 <div id="div_panel3">
+
+                </div>
+                <div id="div_panel4">
 
                 </div>
             </div>

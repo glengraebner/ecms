@@ -12,6 +12,7 @@ function initPage()
     document.getElementById('div_panel2').style.display = "none";
     document.getElementById('div_panel3').style.display = "none";
     document.getElementById('div_panel2_nav').style.width = "250px";
+    document.getElementById('div_panel4').style.display = "none";
     redisplayPage();
 }
 
@@ -40,6 +41,7 @@ function selectMenuItem(item)
     document.getElementById('div_panel1').style.display = "none";
     document.getElementById('div_panel2').style.display = "none";
     document.getElementById('div_panel3').style.display = "none";
+    document.getElementById('div_panel4').style.display = "none";
     itemtxt = String(item);
     document.getElementById('div_panel' + itemtxt).style.display = "inline";
     loadPanel(item);
